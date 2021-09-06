@@ -5,7 +5,7 @@
  * 3、数据变化后重新渲染视图
  */
 
-class Complier {
+class Compiler {
   constructor(vm) {
     this.el = vm.$el;
     this.vm = vm;
