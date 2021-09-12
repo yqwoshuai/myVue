@@ -11,8 +11,16 @@
       <h1>差值表达式</h1>
       <h3>{{ msg }}</h3>
       <h3>{{ count }}</h3>
+      <h3>{{ person.name }}</h3>
+      <h3>{{ person.sex }}</h3>
       <h1>v-text</h1>
       <div v-text="msg"></div>
+      
+      <h1>v-html</h1>
+      <div v-html="<p>123</p>"></div>
+
+      <h1>v-on</h1>
+      <div v-on:click="func">点击</div>
       <h1>v-model</h1>
       <input type="text" v-model="msg" />
       <input type="text" v-model="count" />
@@ -24,18 +32,25 @@
     <script src="./js/vue.js"></script>
 
     <script>
+      function func(){
+        console.log(1)
+      }
+      
       let vm = new MyVue({
         el: "#app",
         data: {
           msg: "Hello MyVue",
           count: 100,
           person: {
-            name: '123'
-          }
+            name: "1234",
+          },
         },
       });
-      
-      console.log(vm)
+
+      setTimeout(() => {
+        vm.msg = 123;
+        vm.person.name = 123;
+      }, 1000);
     </script>
   </body>
 </html>
